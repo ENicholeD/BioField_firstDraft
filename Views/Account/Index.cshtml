@@ -1,0 +1,8 @@
+@using System.Security.Claims
+
+<h2>Authentication with Identity</h2>
+<hr/>
+@if (ApplicationUser.IsAuthenticated)
+{
+    <p>Hello @ApplicationUser.Identity.Name!</p>
+}
