@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BioField.Controllers
 {
-    public class EntriesController : Controllers
+    public class EntriesController : Controller
     {
         private readonly BioFieldContext _db;
 
@@ -37,21 +37,24 @@ namespace BioField.Controllers
         }
         
         [HttpGet("/entry/info/{id}")]
-        
-        public ActionResult Edit(int id)
+        public ActionResult Info(int id)
         {
-            var thisEntry = _db.Entries.FirstOrDefault(entry => entry.EntryId == id);
+            var thisEntry = _db.Entries
+            .Include(entry => entry.EntryId == id);
             return View(thisEntry);
         }
-
-        [HttpPost]
-        public ActionResult Edit (int id)
-        {
-            _db.Entry(entry).State = EntityState.Modified;
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
+    public ActionResult Edit(int id)
+    {
+        var thisEntry = _db.Entries.FirstOrDefault(entry => entry.EntryId == id);
+        return View(thisEntry);
+    }
+    [HttpPost]
+    public ActionResult Edit(Entries entry)
+    {
+        _db.Entry(entry).State = EntityState.Modified;
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+    }
         public ActionResult Delete(int id)
         {
             var thisEntry = _db.Entries.FirstOrDefault(entry => entry.EntryId == id);

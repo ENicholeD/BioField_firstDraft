@@ -19,7 +19,7 @@ namespace BioField.Controllers
         public ActionResult Index ()
         {
             List<Journals> model = _db.Journals.ToList();
-            return View(Model); 
+            return View(model); 
         }
 
         [Authorize]
@@ -39,7 +39,7 @@ namespace BioField.Controllers
         public ActionResult Info(int id)
         {
             var thisJournal = _db.Journals
-            .Include(journal =>journal.EntryList)
+            .Include(journal =>journal.AllJournalEntries)
             .ThenInclude(join => join.Entries)
             .FirstOrDefault(journal => journal.JournalId == id);
             return View(thisJournal);
@@ -53,7 +53,7 @@ namespace BioField.Controllers
         [HttpPost]
         public ActionResult Edit(JournalsController journal)
         {
-            _db.Entry(journal).state = EntityState.Modified;
+            _db.Entry(journal).State = EntityState.Modified;
             _db.SaveChanges();
             return RedirectToAction("Index");
         }

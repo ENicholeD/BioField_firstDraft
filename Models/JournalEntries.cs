@@ -1,4 +1,4 @@
-namespace BioField
+namespace BioField.Models
 {
     public class JournalEntries
     {

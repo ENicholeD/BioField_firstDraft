@@ -1,0 +1,31 @@
+@model BioField.Models.Entries
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.EntryId)
+
+    @Html.Label("Site Name: ")
+    @Html.EditorFor(model => model.Site)
+
+    @Html.LabelFor(model => mode.Temperature)
+    @Html.EditorFor(model => model.Temperature)
+
+    @Html.Label("Weather Condition: ")
+    @Html.EditorFor(model => model.Weather)
+
+    @Html.Label("Wind Condition: ")
+    @Html.EditorFor(model => model.Wind)
+
+    @Html.Label("Soil/Water Condition: ")
+    @Html.EditorFor(model => model.Soil)
+
+    @Html.LabelFor(model => model.Observation)
+    @Html.EditorFor(model => model.Observation)
+
+    
+    <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to Entries", "Index")</p>

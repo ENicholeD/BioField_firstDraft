@@ -6,7 +6,7 @@ namespace BioField.Models
         {
             public Journals()
             {
-                this.JournalEntries = new HashSet<JournalEntries>();
+                this.AllJournalEntries = new HashSet<JournalEntries>();
             }
 
             public int JournalId {get; set;}

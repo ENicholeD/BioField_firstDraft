@@ -1,0 +1,29 @@
+@model BioField.Models.Entries
+
+<h2>New Journal Entry</h2>
+<h5>All journals will automatically be time stamped</h5>
+
+@using (Html BeginForm())
+{
+    @Html.Label("Site Name: ")
+    @Html.TextBoxFor(model => model.Site)
+
+    @Html.LabelFor(model => mode.Temperature)
+    @Html.NumberFor(model => model.Temperature)
+
+    @Html.Label("Weather Condition: ")
+    @Html.TextBoxFor(model => model.Weather)
+
+    @Html.Label("Wind Condition: ")
+    @Html.TextBoxFor(model => model.Wind)
+
+    @Html.Label("Soil/Water Condition: ")
+    @Html.TextBoxFor(model => model.Soil)
+
+    @Html.LabelFor(model => model.Observation)
+    @Html.TextAreaFor(model => model.Observation)
+
+    <input type="submit" value="Add Entry" class="btn btn-default" />
+}
+
+<p>@Html.ActionLink("Show all Entries", "Index")</p>

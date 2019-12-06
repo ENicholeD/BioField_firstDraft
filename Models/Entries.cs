@@ -5,7 +5,7 @@ namespace BioField.Models
     public class Entries
     {
         public Entries(){
-            this.JournalEntries = new HashSet<JournalEntries>();
+            this.AllJournalEntries = new HashSet<JournalEntries>();
         }
 
         public int EntryId {get; set;}
