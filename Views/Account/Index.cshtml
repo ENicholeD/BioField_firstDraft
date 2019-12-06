@@ -5,4 +5,8 @@
 @if (ApplicationUser.IsAuthenticated)
 {
     <p>Hello @ApplicationUser.Identity.Name!</p>
+    @using (Html.BeginForm("LogOff", "Account"))
+    {
+        <p>@Html.ActionLink("Home", "Index", "Home")</p>
+    }
 }
