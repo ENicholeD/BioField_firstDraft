@@ -12,7 +12,6 @@ using BioField.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using BioField.Models;
-namespace Treats
 
 namespace BioField
 {
@@ -35,11 +34,11 @@ namespace BioField
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            ervices.AddDbContext<TreatsContext>(options =>
+            services.AddDbContext<BioFieldContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
-            .AddEntityFrameworkStores<TreatsContext>()
+            .AddEntityFrameworkStores<BioFieldContext>()
             .AddDefaultTokenProviders();    
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
