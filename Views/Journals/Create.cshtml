@@ -1,0 +1,10 @@
+@model BioField.Models.Journals
+
+<h4>Add Journal</h4>
+@using (html.BeginForm())
+{
+    @Html.Label("Journal Name: ")
+    @Html.TextBoxFor(model => model.Name)
+    <input type="submit" value="Add new Journal">
+}
+<p>@Html.ActionLink("Back to Journals", "Index")</p>
