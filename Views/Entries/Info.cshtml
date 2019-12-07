@@ -1,0 +1,20 @@
+@using BioField.Models;
+@model BioField.Models.Entries;
+
+<h3>@Html.DisplayNameFor(model => model.Site)): @Html.DisplayFor(model => model.Site))</h3>
+
+<h4>@Html.DisplayNameFor(model => model.Temperature): @Html.DisplayFor(model => model.Temperature)°C</h4>
+
+<h4>@Html.DisplayNameFor(model => model.Weather): @Html.DisplayFor(model => model.Weather)</h4>
+
+<h4>@Html.DisplayNameFor(model => model.Wind): @Html.DisplayFor(model => model.Wind)</h4>
+
+<h4>@Html.Label("Soil/Water"): @Html.DisplayFor(model => model.Soil)</h4>
+
+<h4>@Html.DisplayNameFor(model => model.Observatiom): @Html.DisplayFor(model => model.Observation)</h4>
+
+<p>@Html.ActionLink("See All Entries", "Index")</p>
+<p>@Html.ActionLink("Edit Entry", "Edit", new { id = Model.EntryId })</p>
+<p>@Html.ActionLink("Delete Entry", "Delete", new { id = Model.EntryId })</p>
+<p>@Html.ActionLink("See All Journals", "Index", "Journals")</p>
+<p>@Html.ActionLink("Back to Homepage", "Index", "Home")</p>
