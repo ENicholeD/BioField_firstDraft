@@ -1,7 +1,7 @@
 @model BioField.Models.Journals
 
 <h4>Add Journal</h4>
-@using (html.BeginForm())
+@using (Html.BeginForm())
 {
     @Html.Label("Journal Name: ")
     @Html.TextBoxFor(model => model.Name)

@@ -7,7 +7,7 @@
     <ul>
         @foreach (Entries entry in Model)
         {
-            <li>@html.ActionLink($"{entry.Site}", "Info", new { id = entry.EntryId })</li>
+            <li>@Html.ActionLink($"{entry.Site}", "Info", new { id = entry.EntryId })</li>
         }
     </ul>
 }

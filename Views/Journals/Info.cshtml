@@ -1,0 +1,23 @@
+@using BioField.Models;
+@model BioField.Models.Journals;
+
+<h2>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h2>
+<hr/>
+@if(@BioField.Models.Entries.Any())
+{
+    <h4>Journal Entries</h4>
+    <ul>
+        @foreach(Entries entries in BioField.Models.Entries)
+        {
+            <li>@join.Entries.Site</li>
+        }
+    </ul>
+}
+else
+{
+    <p>There are no entries at this time</p>
+}
+<p>@Html.ActionLink("Create a new entry", "Create", "Entries")</p>
+<p>@Html.ActionLink("Delete this Journals", "Delete")</p>
+<p>@Html.ActionLink("Back to Journals", "Index")</p>
+<p>@Html.ActionLink("Back to Home", "Index", "Home")</p>

@@ -1,0 +1,17 @@
+@model BioField.Models.Journals
+
+<h2>Edit</h2>
+
+<h4>Editing Journal: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.JournalId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(ModelExpressionProvider => ModelExpressionProvider.Name)
+
+    <input type="submit" value="Save"/>
+}
+<p>@Html.ActionLink("Backt to Journals", "Index")</p>
+    

@@ -3,13 +3,13 @@
 <h2>New Journal Entry</h2>
 <h5>All journals will automatically be time stamped</h5>
 
-@using (Html BeginForm())
+@using (Html.BeginForm())
 {
     @Html.Label("Site Name: ")
     @Html.TextBoxFor(model => model.Site)
 
-    @Html.LabelFor(model => mode.Temperature)
-    @Html.NumberFor(model => model.Temperature)
+    @Html.LabelFor(model => model.Temperature)
+    @Html.TextBoxFor(model => model.Temperature, null, new {@type = "number"})
 
     @Html.Label("Weather Condition: ")
     @Html.TextBoxFor(model => model.Weather)

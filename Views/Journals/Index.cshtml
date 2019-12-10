@@ -1,0 +1,16 @@
+@using BioField.Models;
+@model List<BioField.Models.Journals>;
+
+<h1>@User.Identity.Name Journals</h1>
+@if (@ModelExpressionProvider.Count == 0)
+{
+    <h3>There are no journals at this time</h3>
+}
+
+@foreach (Journals journal in Model)
+{
+    <li>@Html.ActionLink($"{journal.Name}", "Info", new {id = journal.JournalId})</li>
+}
+
+<p>@Html.ActionLink("Add new journal", "Create")</p>
+<p>@Html.ActionLink("Back to Home", "Index", "Home")</p>
