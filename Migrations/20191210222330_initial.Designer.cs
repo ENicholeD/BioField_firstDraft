@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BioField.Migrations
 {
     [DbContext(typeof(BioFieldContext))]
-    [Migration("20191210220434_initial")]
+    [Migration("20191210222330_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

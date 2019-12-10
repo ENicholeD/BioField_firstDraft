@@ -4,15 +4,16 @@
 <h1>@User.Identity.Name Journals</h1>
 @if (Model.Any())
 {
-    <h3>There are no journals at this time</h3>
-}
-else
-{
-        @foreach (var JournalList in Model)
+    @foreach (var JournalList in Model)
     {
         <li>@Html.ActionLink($"{JournalList.Name}", "Info", new {id = JournalList.JournalId})</li>
     }
 }
+else
+{
+     <h3>There are no journals at this time</h3>
+}
+
 
 <p>@Html.ActionLink("Add new journal", "Create")</p>
 <p>@Html.ActionLink("Back to Home", "Index", "Home")</p>
