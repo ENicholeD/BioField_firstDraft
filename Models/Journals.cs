@@ -7,7 +7,7 @@ namespace BioField.Models
         {
             public Journals()
             {
-                this.AllJournalEntries = new HashSet<JournalEntries>();
+                this.Entries = new HashSet<JournalEntry>();
             }
 
             [Key]
@@ -15,6 +15,6 @@ namespace BioField.Models
             
             public string Name {get; set;}
             public virtual ApplicationUser User {get; set;}
-            public virtual ICollection<JournalEntries> AllJournalEntries {get; set;}
+            public virtual ICollection<JournalEntry> Entries {get; set;}
         }
     }

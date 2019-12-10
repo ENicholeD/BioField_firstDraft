@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using BioField.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Threading.Tasks;
 
 namespace BioField.Controllers
 {
@@ -15,7 +18,6 @@ namespace BioField.Controllers
         {
             _db = db;
         }
-
         public ActionResult Index()
         {
             List<Entries> model = _db.Entries.ToList();
@@ -25,6 +27,7 @@ namespace BioField.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            ViewBag.JournalId = new SelectList(_db.Journals, "JournalId", "Name");
             return View();
         }
 
@@ -40,12 +43,13 @@ namespace BioField.Controllers
         public ActionResult Info(int id)
         {
             var thisEntry = _db.Entries
-            .Include(entry => entry.EntryId == id);
+            .FirstOrDefault(entry => entry.EntryId == id);
             return View(thisEntry);
         }
     public ActionResult Edit(int id)
     {
         var thisEntry = _db.Entries.FirstOrDefault(entry => entry.EntryId == id);
+        ViewBag.JournalId = new SelectList(_db.Journals, "JournalId", "Name");
         return View(thisEntry);
     }
     [HttpPost]

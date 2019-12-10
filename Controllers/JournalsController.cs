@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BioField.Controllers 
 {
@@ -39,7 +42,7 @@ namespace BioField.Controllers
         public ActionResult Info(int id)
         {
             var thisJournal = _db.Journals
-            .Include(journal =>journal.AllJournalEntries)
+            .Include(journal => journal.Entries)
             .ThenInclude(join => join.Entries)
             .FirstOrDefault(journal => journal.JournalId == id);
             return View(thisJournal);

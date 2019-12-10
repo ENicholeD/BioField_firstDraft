@@ -5,9 +5,9 @@
 @if (Model.Any())
 {
     <ul>
-        @foreach (Entries entry in Model)
+        @foreach (var listItem in Model)
         {
-            <li>@Html.ActionLink($"{entry.Site}", "Info", new { id = entry.EntryId })</li>
+            <li>@Html.ActionLink($"{listItem.Site}", "Info", new { id = listItem.EntryId })</li>
         }
     </ul>
 }

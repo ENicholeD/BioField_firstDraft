@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+
 namespace BioField.Models
 {
     public class Entries
     {
-        public Entries(){
-            this.AllJournalEntries = new HashSet<JournalEntries>();
-        }
         [Key]
         public int EntryId {get; set;}
 
@@ -16,7 +16,8 @@ namespace BioField.Models
         public string Wind {get; set;}
         public string Soil {get; set;}
         public string Observation {get; set;}
+        public int JournalId {get; set;}
         public virtual ApplicationUser User { get; set; }
-        public ICollection<JournalEntries> AllJournalEntries {get; set;}
+        public virtual Journals Journal {get; set;}
     }
 }

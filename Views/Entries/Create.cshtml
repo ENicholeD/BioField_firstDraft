@@ -2,6 +2,7 @@
 
 <h2>New Journal Entry</h2>
 <h5>All journals will automatically be time stamped</h5>
+<hr/>
 
 @using (Html.BeginForm())
 {
@@ -22,6 +23,9 @@
 
     @Html.LabelFor(model => model.Observation)
     @Html.TextAreaFor(model => model.Observation)
+
+    @Html.LabelFor(model => model.JournalId)
+    @Html.DropDownList("JournalId")
 
     <input type="submit" value="Add Entry" class="btn btn-default" />
 }

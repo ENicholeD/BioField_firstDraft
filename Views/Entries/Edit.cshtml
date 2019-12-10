@@ -24,8 +24,10 @@
     @Html.LabelFor(model => model.Observation)
     @Html.EditorFor(model => model.Observation)
 
+    @Html.LabelFor(model => model.JournalId)
+    @Html.DropDownList("JournalId")
     
-    <input type="submit" value="Save" />
+    <input type="submit" value="Save" class="btn btn-default"/>
 }
 
-<p>@Html.ActionLink("Back to Entries", "Index")</p>
+<p>@Html.ActionLink("Back to Journal Entries", "Index")</p>
