@@ -5,8 +5,28 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  font-size: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  opacity: 100%;
+}
+.navbar-light .navbar-brand, .nav-link{
+  color: rgb(96, 105, 52);
+}
+.navbar-light .navbar-brand {
+  font-family: 'Homemade Apple', cursive;
 }
 
+.nav-link{
+  font-size: 15px;
+}
+
+.natural {
+  background-color: olive;
+  background-image: url("https://www.transparenttextures.com/patterns/tree-bark.png");
+  background-size: 100%;
+  opacity: 75%;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -16,7 +36,7 @@ html {
   html {
     font-size: 16px;
   }
-}
+} */
 
 .border-top {
   border-top: 1px solid #e5e5e5;
@@ -44,13 +64,5 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+  background-color: rgb(83, 83, 60);
 }

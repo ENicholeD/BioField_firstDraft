@@ -69,7 +69,7 @@ namespace BioField.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            var thisJournal = _db.Journals.FirstOrDefault(JournalsController => JournalsController.JournalId ==id);
+            var thisJournal = _db.Journals.FirstOrDefault(journal => journal.JournalId == id);
             _db.Journals.Remove(thisJournal);
             _db.SaveChanges();
             return RedirectToAction("Index");
