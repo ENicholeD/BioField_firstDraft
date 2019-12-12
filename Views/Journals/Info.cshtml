@@ -11,13 +11,13 @@ else
 {
     <h4>Journal Entries</h4>
     <ul>
-        @foreach(var join in Model.Entries)
+        @foreach (var listItem in Model.Entries)
         {
-            <li>@join.Entries.Site</li>
+            <li>@Html.ActionLink($"{listItem.Entries}", "Info", new { id = listItem.EntryId })</li>
         }
     </ul>
 }
 <p>@Html.ActionLink("Create a new entry", "Create", "Entries")</p>
-<p>@Html.ActionLink("Delete this Journals", "Delete")</p>
+<p>@Html.ActionLink("Delete this Journals", "Delete",  new { id = Model.JournalId })</p>
 <p>@Html.ActionLink("Back to Journals", "Index")</p>
 <p>@Html.ActionLink("Back to Home", "Index", "Home")</p>

@@ -5,10 +5,9 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Net;
 
-namespace BioField.Controllers 
+namespace BioField.Controllers
 {
     public class JournalsController : Controller
     {
@@ -19,10 +18,10 @@ namespace BioField.Controllers
             _db = db;
         }
 
-        public ActionResult Index ()
+        public ActionResult Index()
         {
             List<Journals> model = _db.Journals.ToList();
-            return View(model); 
+            return View(model);
         }
 
         [Authorize]
@@ -38,13 +37,13 @@ namespace BioField.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
-
         public ActionResult Info(int id)
         {
             var thisJournal = _db.Journals
             .Include(journal => journal.Entries)
             .ThenInclude(join => join.Entries)
             .FirstOrDefault(journal => journal.JournalId == id);
+            Console.WriteLine(thisJournal);
             return View(thisJournal);
         }
 
@@ -56,16 +55,17 @@ namespace BioField.Controllers
         [HttpPost]
         public ActionResult Edit(JournalsController journal)
         {
-            _db.Entry(journal).State = EntityState.Modified;
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+                _db.Entry(journal).State = EntityState.Modified;
+                _db.SaveChanges();
+                return RedirectToAction("Index");
         }
         public ActionResult Delete(int id)
         {
-            var thisJournal = _db.Journals.FirstOrDefault(journal => journal.JournalId == id);
+            var thisJournal = _db.Journals
+             .FirstOrDefault(journal => journal.JournalId == id);
             return View(thisJournal);
         }
-        
+
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
