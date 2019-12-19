@@ -5,19 +5,22 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-  font-size: 20px;
+  font-size: 40px;
   padding-top: 25px;
   padding-bottom: 25px;
   opacity: 100%;
 }
-.navbar-light .navbar-brand, .nav-link{
+
+.navbar-light .navbar-brand,
+.nav-link {
   color: rgb(96, 105, 52);
 }
+
 .navbar-light .navbar-brand {
   font-family: 'Homemade Apple', cursive;
 }
 
-.nav-link{
+.nav-link {
   font-size: 15px;
 }
 
@@ -27,20 +30,23 @@ a.navbar-brand {
   background-size: 100%;
   opacity: 75%;
 }
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
   font-size: 14px;
 }
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
-} */
+}
 
-.border-top {
+*/ .border-top {
   border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
 }
@@ -65,4 +71,36 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   background-color: rgb(83, 83, 60);
+}
+
+a {
+  color: rgba(22, 22, 29, .75);
+  font-weight: bold;
+}
+
+.formatedCreate,
+.formatedFoot {
+  text-align: center;
+}
+
+.formatedCreate {
+  background-color: rgb(134, 134, 108);
+  border: 2px solid rgb(87, 80, 22);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.crabs {
+  width: 60%;
+  border-radius: 200px;
+  margin-top: 50px;
+}
+
+.description {
+  margin-bottom: 50px;
+  font-size: 15px;
+}
+
+i {
+  font-weight: lighter;
 }

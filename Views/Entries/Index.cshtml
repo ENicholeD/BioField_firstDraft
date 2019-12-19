@@ -1,6 +1,6 @@
 @using BioField.Models;
 @model IEnumerable<BioField.Models.Entries>;
-
+<div class="container formatedCreate">
 <h1>All entries</h1>
 @if (Model.Any())
 {
@@ -19,3 +19,4 @@ else
 <p>@Html.ActionLink("Add a New Entry", "Create")</p>
 <p>@Html.ActionLink("See All Journals", "Index", "Journals")</p>
 <p>@Html.ActionLink("Go back to home", "Index", "Home")</p>
+</div>

@@ -1,5 +1,5 @@
 @model BioField.Models.Journals
-
+<div class="container formatedCreate">
 <h4>Add Journal</h4>
 @using (Html.BeginForm())
 {
@@ -8,3 +8,4 @@
     <input type="submit" value="Add new Journal">
 }
 <p>@Html.ActionLink("Back to Journals", "Index")</p>
+</div>

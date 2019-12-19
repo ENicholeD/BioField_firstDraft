@@ -22,6 +22,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 natural">
             <div class="container">
+                <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/BioFieldLogo.png" style="width: 100px" /></a>
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BioField</a>
                 <a class="nav-link" asp-area="" asp-controller="Journals" asp-action="Index">Journals</a>
                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -63,5 +64,16 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
+    <footer class="formatedFoot">
+        <hr>
+        <a href="https://github.com/MagpieMortician/BioField_secondDraft"><img
+                src="https://image.flaticon.com/icons/png/512/25/25231.png" style="width: 25px"></a>
+        <a href="https://www.linkedin.com/in/erin-deuel/"><img
+                src="https://image.flaticon.com/icons/png/512/61/61109.png" style="width: 25px"></a>
+        <a href="https://twitter.com/WraithsB"><img src="https://image.flaticon.com/icons/png/512/23/23931.png"
+                style="width: 25px;"> </a>
+                <a href="https://www.instagram.com/magpie_parliament/"><img src="https://image.flaticon.com/icons/png/512/87/87390.png"
+                style="width: 25px;"> </a>
+    </footer>
 </body>
 </html>

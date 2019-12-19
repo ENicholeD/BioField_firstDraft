@@ -1,6 +1,6 @@
 @using BioField.Models;
 @model BioField.Models.Journals;
-
+<div class="container formatedCreate">
 <h2>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h2>
 <hr/>
 @if(@Model.Entries.Count == 0)
@@ -21,3 +21,4 @@ else
 <p>@Html.ActionLink("Delete this Journals", "Delete",  new { id = Model.JournalId })</p>
 <p>@Html.ActionLink("Back to Journals", "Index")</p>
 <p>@Html.ActionLink("Back to Home", "Index", "Home")</p>
+</div>

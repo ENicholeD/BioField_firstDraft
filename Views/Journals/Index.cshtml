@@ -1,6 +1,6 @@
 @using BioField.Models;
 @model List<BioField.Models.Journals>;
-
+<div class="container formatedCreate">
 <h1>@User.Identity.Name Journals</h1>
 @if (Model.Any())
 {
@@ -17,3 +17,4 @@ else
 
 <p>@Html.ActionLink("Add new journal", "Create")</p>
 <p>@Html.ActionLink("Back to Home", "Index", "Home")</p>
+</div>

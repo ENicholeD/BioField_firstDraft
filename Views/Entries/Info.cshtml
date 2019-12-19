@@ -1,6 +1,6 @@
 @using BioField.Models;
 @model BioField.Models.Entries;
-
+<div class="container formatedCreate">
 <h3>@Html.DisplayNameFor(model => model.Site): @Html.DisplayFor(model => model.Site)</h3>
 
 <h4>@Html.DisplayNameFor(model => model.Temperature): @Html.DisplayFor(model => model.Temperature)°C</h4>
@@ -18,3 +18,4 @@
 <p>@Html.ActionLink("Delete Entry", "Delete", new { id = Model.EntryId })</p>
 <p>@Html.ActionLink("See All Journals", "Index", "Journals")</p>
 <p>@Html.ActionLink("Back to Homepage", "Index", "Home")</p>
+</div>
